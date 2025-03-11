@@ -26,8 +26,8 @@ const Comunicaciones = () => {
   return (
     <main className="container-fluid py-1 mt-1">
       {/* Sección de Mensajes */}
-      <section className="mt-4">
-        <div className="row row-cols-1 row-cols-md-2 g-5">
+      <section className="mt-1">
+        <div className="row row-cols-1 row-cols-md-1 g-5">
           {mensajes.map((mensaje) => (
             <div className="col" key={mensaje.id}>
               <div className={`card border-start border-${mensaje.color} shadow-sm`}>
@@ -45,7 +45,7 @@ const Comunicaciones = () => {
       </section>
 
       {/* Paginación */}
-      <nav className="mt-4">
+      <nav className="mt-2">
         <ul className="pagination justify-content-center">
           <li className="page-item">
             <button className="page-link">1</button>

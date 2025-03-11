@@ -1,37 +1,49 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaTachometerAlt, FaClipboardList, FaComments, FaBox, FaBook, FaSignOutAlt, FaTimes, FaMap } from "react-icons/fa";
+import {
+  FaTachometerAlt,
+  FaClipboardList,
+  FaComments,
+  FaBox,
+  FaBook,
+  FaSignOutAlt,
+  FaTimes,
+  FaMap,
+} from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <>
       {/* Fondo oscuro semi-transparente cuando el Sidebar está abierto */}
-      <div
-        className={`overlay ${isOpen ? "d-block" : "d-none"}`}
-        onClick={toggleSidebar}
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          zIndex: 1049, // Fondo oscuro detrás del sidebar
-        }}
-      ></div>
+      {isOpen && (
+        <div
+          className="overlay"
+          onClick={toggleSidebar}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            zIndex: 1049,
+          }}
+        ></div>
+      )}
 
-      {/* Sidebar con color de fondo personalizado (#1f355a) */}
+      {/* Sidebar con transición suave y diseño mejorado */}
       <div
-        className="sidebar text-white p-3 position-fixed vh-100 d-flex flex-column"
+        className={`sidebar text-white p-3 position-fixed vh-100 d-flex flex-column shadow-lg ${
+          isOpen ? "show" : "hide"
+        }`}
         style={{
           width: "250px",
           top: 0,
-          left: isOpen ? "0" : "-250px", // Se desliza en vez de desaparecer
+          left: isOpen ? "0" : "-250px",
           transition: "left 0.3s ease-in-out",
-          backgroundColor: "#1f355a", // Color de fondo personalizado
-          zIndex: 1050, // Encima de todo
+          backgroundColor: "#1f355a",
+          zIndex: 1050,
         }}
       >
         {/* Botón de Cerrar Sidebar */}
@@ -56,19 +68,19 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         {/* Links del menú */}
         <nav className="nav flex-column">
           <Link to="/" className="nav-link text-white" onClick={toggleSidebar}>
-            <FaTachometerAlt /> Dashboard
+            <FaTachometerAlt className="me-2" /> Dashboard
           </Link>
           <Link to="/ot" className="nav-link text-white" onClick={toggleSidebar}>
-            <FaClipboardList /> OT
+            <FaClipboardList className="me-2" /> OT
           </Link>
           <Link to="/mapa" className="nav-link text-white" onClick={toggleSidebar}>
-  <FaMap className="me-2" /> Mapa
-</Link>
+            <FaMap className="me-2" /> Mapa
+          </Link>
           <Link to="/comunicaciones" className="nav-link text-white" onClick={toggleSidebar}>
-            <FaComments /> Comunicaciones
+            <FaComments className="me-2" /> Comunicaciones
           </Link>
           <Link to="/inventario" className="nav-link text-white" onClick={toggleSidebar}>
-            <FaBox /> Inventario
+            <FaBox className="me-2" /> Inventario
           </Link>
         </nav>
 
@@ -76,11 +88,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
         {/* Configuración y Cierre de Sesión */}
         <nav className="nav flex-column">
-          <Link to="/guia" className="nav-link text-white" onClick={toggleSidebar}>
-            <FaBook /> Guía de Uso
+          <Link to="/TermsOfUse" className="nav-link text-white" onClick={toggleSidebar}>
+            <FaBook className="me-2" /> Guía de Uso
           </Link>
-          <Link to="/logout" className="nav-link text-danger" onClick={toggleSidebar}>
-            <FaSignOutAlt /> Cerrar Sesión
+          <Link to="/Login" className="nav-link text-danger" onClick={toggleSidebar}>
+            <FaSignOutAlt className="me-2" /> Cerrar Sesión
           </Link>
         </nav>
       </div>

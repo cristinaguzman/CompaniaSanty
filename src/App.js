@@ -5,17 +5,19 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
 import Inventario from "./pages/Inventario";
-import Comunicaciones from "./pages/Comunicaciones"; // Corregido
-import Mapa from "./pages/Mapa"; 
+import Comunicaciones from "./pages/Comunicaciones";
+import TermsOfUse from "./pages/TermsOfUse";
+import Login from "./pages/Login";
+import Mapa from "./pages/Mapa";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const location = useLocation(); 
+  const location = useLocation();
 
   // Alternar Sidebar
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+    setIsSidebarOpen((prev) => !prev);
   };
 
   // Cierra el Sidebar al cambiar de ruta
@@ -35,13 +37,15 @@ const App = () => {
       {isSidebarOpen && <div className="sidebar-overlay" onClick={toggleSidebar}></div>}
 
       {/* Contenido principal */}
-      <main className="flex-grow-1 p-4 mt-5 content-area">
+      <main className="flex-grow-1 p-3 mt-2 content-area">
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/inventario" element={<Inventario />} />
           <Route path="/mapa" element={<Mapa />} />
           <Route path="/comunicaciones" element={<Comunicaciones />} />
+          <Route path="/TermsOfUse" element={<TermsOfUse />} />
+          <Route path="/Login" element={<Login />} />
         </Routes>
       </main>
 
