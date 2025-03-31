@@ -91,6 +91,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <Link to="/TermsOfUse" className="nav-link text-white" onClick={toggleSidebar}>
             <FaBook className="me-2" /> Guía de Uso
           </Link>
+          <Link to="/Privacidad" className="nav-link text-white" onClick={toggleSidebar}>
+            <FaBook className="me-2" /> Privacidad
+          </Link>
           <Link to="/Login" className="nav-link text-danger" onClick={toggleSidebar}>
             <FaSignOutAlt className="me-2" /> Cerrar Sesión
           </Link>
