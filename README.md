@@ -44,6 +44,7 @@ package.json: Archivo de configuración de dependencias y scripts del proyecto.�
 README.md: Este archivo de documentación.​
 
 # Estructura del Proyecto
+```
 CompaniaSanty/
 ├── public/                # Archivos públicos (favicon, index.html, etc.)
 │
@@ -59,6 +60,7 @@ CompaniaSanty/
 ├── package.json           # Dependencias y scripts del proyecto
 ├── package-lock.json      # Detalles de versiones de dependencias
 └── README.md              # Este archivo
+```
 
 # Contribuciones
 Actualmente, este proyecto está en una etapa inicial. Las contribuciones son bienvenidas. Si deseas colaborar, por favor abre una issue o envía un pull request.​
