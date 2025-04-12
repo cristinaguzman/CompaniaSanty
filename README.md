@@ -44,9 +44,6 @@ package.json: Archivo de configuración de dependencias y scripts del proyecto.�
 README.md: Este archivo de documentación.​
 
 # Estructura del Proyecto
-csharp
-Copiar
-Editar
 CompaniaSanty/
 ├── public/                # Archivos públicos (favicon, index.html, etc.)
 │
